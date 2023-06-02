@@ -1,0 +1,407 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html lang="en" data-react-helmet="lang"&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;script src="https://partner.googleadservices.com/gampad/cookie.js?domain=pokeapi.co&amp;callback=_gfp_s_&amp;client=ca-pub-9300109033485921"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202305250101/show_ads_impl_fy2021.js" id="google_shimpl"&gt;&lt;/script&gt;<br/>
+  &lt;script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MD89GGQ"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':<br/>
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],<br/>
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=<br/>
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);<br/>
+  })(window,document,'script','dataLayer','GTM-MD89GGQ');&lt;/script&gt;<br/>
+  &lt;meta name="generator" content="React Static"&gt;<br/>
+  &lt;title&gt;PokéAPI&lt;/title&gt;<br/>
+  &lt;meta charset="UTF-8"&gt;<br/>
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"&gt;<br/>
+  &lt;meta data-react-helmet="true" property="og:type" content="website"&gt;<br/>
+  &lt;meta data-react-helmet="true" name="Description" content="An open RESTful API for Pokémon data"&gt;<br/>
+  &lt;meta data-react-helmet="true" property="keywords" content="pokemon pokémon API REST free"&gt;<br/>
+  &lt;meta data-react-helmet="true" property="og:image" content="/static/pokeapi_256.3fa72200.png"&gt;<br/>
+  &lt;meta data-react-helmet="true" property="description" content="An open RESTful API for Pokémon data"&gt;<br/>
+  &lt;link rel="preload" as="script" href="/templates/styles.314290d0.js"&gt;<br/>
+  &lt;link rel="preload" as="script" href="/templates/vendors~main.17a02a7f.js"&gt;<br/>
+  &lt;link rel="preload" as="script" href="/main.b36df90d.js"&gt;<br/>
+  &lt;link rel="preload" as="style" href="/styles.ee4e7b91.css"&gt;<br/>
+  &lt;link rel="stylesheet" href="/styles.ee4e7b91.css"&gt;<br/>
+  &lt;link data-react-helmet="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700"&gt;<br/>
+  &lt;link data-react-helmet="true" rel="icon" href="/pokeapi_192_square.png"&gt;<br/>
+  &lt;script data-react-helmet="true"&gt;window.dataLayer = window.dataLayer || [];<br/>
+                    function gtag() {<br/>
+                        dataLayer.push(arguments)<br/>
+                    }<br/>
+                    gtag('js', new Date());<br/>
+                    gtag('config', 'UA-53299289-1');&lt;/script&gt;<br/>
+  &lt;script charset="utf-8" src="/templates/vendors~__react_static_root__/src/pages/docs/graphql~__react_static_root__/src/pages/docs/v2~__react~ec08c501.5808c60f.js"&gt;&lt;/script&gt;<br/>
+  &lt;script charset="utf-8" src="/templates/__react_static_root__/src/pages/index.32e62e02.js"&gt;&lt;/script&gt;<br/>
+  &lt;script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-53299289-1" data-react-helmet="true"&gt;&lt;/script&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A7CQXglZzTrThjGTBEn1rWTxHOEtkWivwzgea+NjyardrwlieSjVuyG44PkYgIPGs8Q9svD8sF3Yedn0BBBjXAkAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A3vKT9yxRPjmXN3DpIiz58f5JykcWHjUo/W7hvmtjgh9jPpQgem9VbADiNovG8NkO6mRmk70Kex8/KUqAYWVWAEAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A4A26Ymj79UVY7C7JGUS4BG1s7MdcDokAQf/RP0paks+RoTYbXHxceT/5L4iKcsleFCngi75YfNRGW2+SpVv1ggAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A7CQXglZzTrThjGTBEn1rWTxHOEtkWivwzgea+NjyardrwlieSjVuyG44PkYgIPGs8Q9svD8sF3Yedn0BBBjXAkAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A3vKT9yxRPjmXN3DpIiz58f5JykcWHjUo/W7hvmtjgh9jPpQgem9VbADiNovG8NkO6mRmk70Kex8/KUqAYWVWAEAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A4A26Ymj79UVY7C7JGUS4BG1s7MdcDokAQf/RP0paks+RoTYbXHxceT/5L4iKcsleFCngi75YfNRGW2+SpVv1ggAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="&gt;<br/>
+  &lt;script async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9300109033485921" crossorigin="anonymous" data-react-helmet="true" data-checked-head="true"&gt;&lt;/script&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A7CQXglZzTrThjGTBEn1rWTxHOEtkWivwzgea+NjyardrwlieSjVuyG44PkYgIPGs8Q9svD8sF3Yedn0BBBjXAkAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A3vKT9yxRPjmXN3DpIiz58f5JykcWHjUo/W7hvmtjgh9jPpQgem9VbADiNovG8NkO6mRmk70Kex8/KUqAYWVWAEAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="A4A26Ymj79UVY7C7JGUS4BG1s7MdcDokAQf/RP0paks+RoTYbXHxceT/5L4iKcsleFCngi75YfNRGW2+SpVv1ggAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="&gt;<br/>
+  &lt;meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="&gt;<br/>
+  &lt;link rel="preload" href="https://adservice.google.com.mx/adsid/integrator.js?domain=pokeapi.co" as="script"&gt;<br/>
+  &lt;script type="text/javascript" src="https://adservice.google.com.mx/adsid/integrator.js?domain=pokeapi.co"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=pokeapi.co" as="script"&gt;<br/>
+  &lt;script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=pokeapi.co"&gt;&lt;/script&gt;<br/>
+  &lt;script charset="utf-8" src="/templates/__react_static_root__/src/pages/docs/graphql~__react_static_root__/src/pages/docs/v2.23017cd9.js"&gt;&lt;/script&gt;<br/>
+  &lt;script charset="utf-8" src="/templates/__react_static_root__/src/pages/docs/graphql.d8133211.js"&gt;&lt;/script&gt;<br/>
+  &lt;script charset="utf-8" src="/templates/__react_static_root__/src/pages/docs/v2.b1dee961.js"&gt;&lt;/script&gt;<br/>
+  &lt;script charset="utf-8" src="/templates/__react_static_root__/src/pages/about.e51ecc98.js"&gt;&lt;/script&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body&gt;<br/>
+  &lt;noscript&gt;<br/>
+   &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD89GGQ" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;<br/>
+  &lt;/noscript&gt;<br/>
+  &lt;div id="root"&gt;<br/>
+   &lt;div id="site-header" class="Header-module__headerwrapper--2Yq6L"&gt;<br/>
+    &lt;header class="Header-module__header--3xzeo"&gt;<br/>
+     &lt;a class="Header-module__homelink--1N9Da" title="PokéAPI" href="/"&gt;&lt;img src="/static/pokeapi_256.3fa72200.png" alt="PokéAPI"&gt;&lt;/a&gt;<br/>
+     &lt;nav class="Header-module__nav--25Sms" style="position: relative;"&gt;<br/>
+      &lt;a class="Header-module__link--zKtyy Header-module__link_active--nehDk" href="/"&gt;Home&lt;/a&gt;&lt;a class="Header-module__link--zKtyy" href="/about"&gt;About&lt;/a&gt;&lt;a class="Header-module__link--zKtyy" href="/docs/v2"&gt;API v2&lt;/a&gt;&lt;a class="Header-module__link--zKtyy" href="/docs/graphql"&gt;GraphQL v1beta&lt;/a&gt;<br/>
+     &lt;/nav&gt;<br/>
+    &lt;/header&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="Alert-module__alert--2i5XN Alert-module__level_success--2z-F7"&gt;<br/>
+    &lt;div class="Alert-module__container--1NlRR"&gt;<br/>
+     &lt;div class="Alert-module__message--O5qK7"&gt;<br/>
+      &lt;p&gt;PokeAPI proudly announces Beta support for GraphQL. Access our free console at &lt;a href="https://beta.pokeapi.co/graphql/console/"&gt;beta.pokeapi.co/graphql/console&lt;/a&gt; and take a look at the &lt;a href="/docs/graphql"&gt;documentation&lt;/a&gt;&lt;/p&gt; <br/>
+     &lt;/div&gt;&lt;button title="Dismiss" class="Alert-module__dismiss_button--3y9xi"&gt;&lt;span hidden&gt;Dismiss&lt;/span&gt;<br/>
+      &lt;svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512" class="Alert-module__image--FcaZQ" aria-hidden="true"&gt;<br/>
+       &lt;path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"&gt;&lt;/path&gt;<br/>
+      &lt;/svg&gt;&lt;/button&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="Alert-module__alert--2i5XN Alert-module__level_info--V0PaD"&gt;<br/>
+    &lt;div class="Alert-module__container--1NlRR"&gt;<br/>
+     &lt;div class="Alert-module__message--O5qK7"&gt;<br/>
+      &lt;p&gt;&lt;strong&gt;Sword and Shield&lt;/strong&gt; data might be inaccurate and lacking in various aspects due to the fact that it is not taken directly from Nintendo's Pokemon ROMs. If you spot any mistake, please report it &lt;a href="https://github.com/PokeAPI/pokedex/issues"&gt;here&lt;/a&gt;&lt;/p&gt; <br/>
+     &lt;/div&gt;&lt;button title="Dismiss" class="Alert-module__dismiss_button--3y9xi"&gt;&lt;span hidden&gt;Dismiss&lt;/span&gt;<br/>
+      &lt;svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512" class="Alert-module__image--FcaZQ" aria-hidden="true"&gt;<br/>
+       &lt;path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"&gt;&lt;/path&gt;<br/>
+      &lt;/svg&gt;&lt;/button&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;main id="site-content"&gt;<br/>
+    &lt;div class="index-module__banner_background--wtuhu"&gt;<br/>
+     &lt;div class="index-module__banner--1wNKW"&gt;<br/>
+      &lt;div class="index-module__logo_container--sUGNH"&gt;<br/>
+       &lt;img alt="PokéAPI" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;h2&gt;The RESTful Pokémon API&lt;/h2&gt;<br/>
+      &lt;p&gt;Serving over &lt;strong&gt;330,000,000&lt;/strong&gt; API calls each month!&lt;/p&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="index-module__cta_background--m1pBy"&gt;<br/>
+     &lt;div class="index-module__cta--dSbW-"&gt;<br/>
+      &lt;p&gt;All the Pokémon data you'll ever need in one place,&lt;br&gt;easily accessible through a modern RESTful API.&lt;/p&gt;<br/>
+      &lt;p&gt;&lt;a href="/docs/v2"&gt;Check out the docs!&lt;/a&gt;&lt;/p&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="Page-module__page--mC5go"&gt;<br/>
+     &lt;div class="Page-module__constrain_width--N2xeq"&gt;<br/>
+      &lt;div class="ApiExplorer-module__container--PXmNp"&gt;<br/>
+       &lt;h2 class="ApiExplorer-module__tryit--3G7nr"&gt;Try it now!&lt;/h2&gt;<br/>
+       &lt;form class="Input-module__container--1l83Z"&gt;<br/>
+        &lt;label for="url-input" class="Input-module__prefix--1t9gQ"&gt;&lt;span hidden&gt;Resource URL:&lt;/span&gt;https://pokeapi.co/api/v2/&lt;/label&gt;<br/>
+        &lt;input id="url-input" class="Input-module__input--3Zr-s" type="text" value="pokemon/pikachu"&gt;<br/>
+        &lt;div class="ClipboardButton-module__tooltip--rPzpZ"&gt;<br/>
+         &lt;button class="ClipboardButton-module__buttoncopy--4ZooZ" type="button"&gt;<br/>
+          &lt;svg class="ClipboardButton-module__iconcopy--2SgcD" width="1.5rem" height="1.5rem" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;<br/>
+           &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"&gt;&lt;/path&gt;<br/>
+          &lt;/svg&gt;&lt;span class="ClipboardButton-module__tooltiptext--1MzvX"&gt;Copy to clipboard&lt;/span&gt;&lt;/button&gt;<br/>
+        &lt;/div&gt;&lt;button type="submit" class="Input-module__button--3cQfp"&gt;Submit&lt;/button&gt;<br/>
+       &lt;/form&gt;<br/>
+       &lt;p class="ApiExplorer-module__hint_sentence--2BhVp"&gt;Need a hint? Try &lt;button class="LinkButton-module__linkbutton--1SmNl ApiExplorer-module__hint--nsQmO"&gt;pokemon/ditto&lt;/button&gt;, &lt;button class="LinkButton-module__linkbutton--1SmNl ApiExplorer-module__hint--nsQmO"&gt;pokemon-species/aegislash&lt;/button&gt;, &lt;button class="LinkButton-module__linkbutton--1SmNl ApiExplorer-module__hint--nsQmO"&gt;type/3&lt;/button&gt;, &lt;button class="LinkButton-module__linkbutton--1SmNl ApiExplorer-module__hint--nsQmO"&gt;ability/battle-armor&lt;/button&gt;, or &lt;button class="LinkButton-module__linkbutton--1SmNl ApiExplorer-module__hint--nsQmO"&gt;pokemon?limit=100000&amp;offset=0&lt;/button&gt;.&lt;/p&gt;<br/>
+       &lt;p&gt;Direct link to results: &lt;a href="https://pokeapi.co/api/v2/pokemon/ditto" target="_blank"&gt;https://pokeapi.co/api/v2/pokemon/ditto&lt;/a&gt;&lt;/p&gt;<br/>
+       &lt;h2 class="ApiExplorer-module__message--e4oy9"&gt;Resource for ditto&lt;/h2&gt;<br/>
+       &lt;div class="JsonViewer-module__jsonviewer--vatbb"&gt;<br/>
+        &lt;div class="JsonViewer-module__json--2OTYy"&gt;<br/>
+         &lt;ul style="border: 0px; padding: 0px; margin: 0.5em 0px 0.5em 0.125em; list-style: none; user-select: none; background-color: rgb(255, 255, 255);"&gt;<br/>
+          &lt;li style="padding: 0px; margin: 0px;"&gt;<br/>
+           &lt;ul style="padding: 0px; margin: 0px; list-style: none;"&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;abilities:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 2 items&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+              &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+               &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                 ▶<br/>
+                &lt;/div&gt;<br/>
+               &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;0:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 3 keys&lt;/span&gt;&lt;/span&gt;<br/>
+               &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;ability:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"limber"&lt;/span&gt;&lt;/li&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/ability/7/"&lt;/span&gt;&lt;/li&gt;<br/>
+                 &lt;/ul&gt;&lt;/li&gt;<br/>
+                &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;is_hidden:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;false&lt;/span&gt;&lt;/li&gt;<br/>
+                &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;slot:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;1&lt;/span&gt;&lt;/li&gt;<br/>
+               &lt;/ul&gt;&lt;/li&gt;<br/>
+              &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+               &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                 ▶<br/>
+                &lt;/div&gt;<br/>
+               &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;1:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 3 keys&lt;/span&gt;&lt;/span&gt;<br/>
+               &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;ability:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"imposter"&lt;/span&gt;&lt;/li&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/ability/150/"&lt;/span&gt;&lt;/li&gt;<br/>
+                 &lt;/ul&gt;&lt;/li&gt;<br/>
+                &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;is_hidden:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;true&lt;/span&gt;&lt;/li&gt;<br/>
+                &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;slot:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;3&lt;/span&gt;&lt;/li&gt;<br/>
+               &lt;/ul&gt;&lt;/li&gt;<br/>
+             &lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;base_experience:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;101&lt;/span&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;forms:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 1 item&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+              &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+               &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                 ▶<br/>
+                &lt;/div&gt;<br/>
+               &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;0:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+               &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"ditto"&lt;/span&gt;&lt;/li&gt;<br/>
+                &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/pokemon-form/132/"&lt;/span&gt;&lt;/li&gt;<br/>
+               &lt;/ul&gt;&lt;/li&gt;<br/>
+             &lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(0deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;game_indices:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(108, 116, 31);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 20 items&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;height:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;3&lt;/span&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;held_items:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 2 items&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+              &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+               &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                 ▶<br/>
+                &lt;/div&gt;<br/>
+               &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;0:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+               &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;item:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"metal-powder"&lt;/span&gt;&lt;/li&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/item/234/"&lt;/span&gt;&lt;/li&gt;<br/>
+                 &lt;/ul&gt;&lt;/li&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(0deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;version_details:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(108, 116, 31);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 22 items&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+               &lt;/ul&gt;&lt;/li&gt;<br/>
+              &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+               &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                 ▶<br/>
+                &lt;/div&gt;<br/>
+               &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;1:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+               &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;item:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"quick-powder"&lt;/span&gt;&lt;/li&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/item/251/"&lt;/span&gt;&lt;/li&gt;<br/>
+                 &lt;/ul&gt;&lt;/li&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(0deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;version_details:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(108, 116, 31);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 17 items&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+               &lt;/ul&gt;&lt;/li&gt;<br/>
+             &lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;id:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;132&lt;/span&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;is_default:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;true&lt;/span&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;location_area_encounters:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/pokemon/132/encounters"&lt;/span&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;moves:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 1 item&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+              &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+               &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                 ▶<br/>
+                &lt;/div&gt;<br/>
+               &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;0:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+               &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;move:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"transform"&lt;/span&gt;&lt;/li&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/move/144/"&lt;/span&gt;&lt;/li&gt;<br/>
+                 &lt;/ul&gt;&lt;/li&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(0deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;version_group_details:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(108, 116, 31);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 21 items&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+               &lt;/ul&gt;&lt;/li&gt;<br/>
+             &lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"ditto"&lt;/span&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;order:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;214&lt;/span&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 1.125em;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: text; cursor: default;"&gt;&lt;span&gt;past_types:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 0 items&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;species:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+              &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"ditto"&lt;/span&gt;&lt;/li&gt;<br/>
+              &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/pokemon-species/132/"&lt;/span&gt;&lt;/li&gt;<br/>
+             &lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(0deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;sprites:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(108, 116, 31);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 10 keys&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(0deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;stats:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(108, 116, 31);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 6 items&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;&lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0px; padding-left: 0px;"&gt;<br/>
+             &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+              &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+               ▶<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;types:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;[]&lt;/span&gt; 1 item&lt;/span&gt;&lt;/span&gt;<br/>
+             &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+              &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+               &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                 ▶<br/>
+                &lt;/div&gt;<br/>
+               &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;0:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+               &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;slot:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;1&lt;/span&gt;&lt;/li&gt;<br/>
+                &lt;li style="position: relative; padding-top: 0.25em; margin-left: 0.875em; padding-left: 0px;"&gt;<br/>
+                 &lt;div style="display: inline-block; padding-right: 0.5em; padding-left: 0px; cursor: pointer;"&gt;<br/>
+                  &lt;div style="margin-left: 0px; transition: all 150ms ease 0s; transform: rotateZ(90deg); transform-origin: 45% 50%; position: relative; line-height: 1.1em; font-size: 0.75em; color: rgb(77, 76, 77);"&gt;<br/>
+                   ▶<br/>
+                  &lt;/div&gt;<br/>
+                 &lt;/div&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px; padding: 0px; user-select: inherit; cursor: pointer;"&gt;&lt;span&gt;type:&lt;/span&gt;&lt;/label&gt;&lt;span style="padding-left: 0.5em; cursor: default; color: rgb(128, 130, 128);"&gt;&lt;span&gt;&lt;span style="margin-left: 0.3em; margin-right: 0.3em;"&gt;{}&lt;/span&gt; 2 keys&lt;/span&gt;&lt;/span&gt;<br/>
+                 &lt;ul style="padding: 0px; margin: 0px; list-style: none; display: block;"&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;name:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"normal"&lt;/span&gt;&lt;/li&gt;<br/>
+                  &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 2.125em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;url:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(108, 116, 31);"&gt;"https://pokeapi.co/api/v2/type/1/"&lt;/span&gt;&lt;/li&gt;<br/>
+                 &lt;/ul&gt;&lt;/li&gt;<br/>
+               &lt;/ul&gt;&lt;/li&gt;<br/>
+             &lt;/ul&gt;&lt;/li&gt;<br/>
+            &lt;li style="padding-top: 0.25em; padding-right: 0px; margin-left: 0.875em; user-select: text; overflow-wrap: break-word; padding-left: 1.25em; text-indent: -0.5em; word-break: break-all;"&gt;&lt;label style="display: inline-block; color: rgb(77, 76, 77); margin: 0px 0.5em 0px 0px;"&gt;&lt;span&gt;weight:&lt;/span&gt;&lt;/label&gt;&lt;span style="color: rgb(176, 101, 49);"&gt;40&lt;/span&gt;&lt;/li&gt;<br/>
+           &lt;/ul&gt;&lt;/li&gt;<br/>
+         &lt;/ul&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="JsonViewer-module__toolbar--1qg2d"&gt;<br/>
+         &lt;label&gt;&lt;input type="checkbox" checked&gt; View raw JSON (32.732 kB, 948 lines)&lt;/label&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="index-module__faqs--2b4hu"&gt;<br/>
+       &lt;div class="index-module__faq--3ZCqY"&gt;<br/>
+        &lt;h2 class="index-module__faq_title--UhEAD"&gt;What is this?&lt;/h2&gt;<br/>
+        &lt;div class="index-module__faq_content--2z4fp"&gt;<br/>
+         &lt;p&gt;This is a full RESTful API linked to an extensive database detailing everything about the Pokémon main game series.&lt;/p&gt;<br/>
+         &lt;p&gt;We've covered everything from Pokémon to Berry Flavors.&lt;/p&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div class="index-module__faq--3ZCqY"&gt;<br/>
+        &lt;h2 class="index-module__faq_title--UhEAD"&gt;Where do I start?&lt;/h2&gt;<br/>
+        &lt;div class="index-module__faq_content--2z4fp"&gt;<br/>
+         &lt;p&gt;We have awesome &lt;a href="/docs/v2"&gt;documentation&lt;/a&gt; on how to use this API. It takes minutes to get started.&lt;/p&gt;<br/>
+         &lt;p&gt;This API will always be publicly available and will never require any extensive setup process to consume.&lt;/p&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/main&gt;<br/>
+   &lt;footer id="site-footer" class="Footer-module__footer--3nalg"&gt;<br/>
+    &lt;div class="Footer-module__container--yg5jX"&gt;<br/>
+     &lt;div&gt;<br/>
+      Created by &lt;a href="https://phalt.github.io/"&gt;Paul Hallett&lt;/a&gt; and other &lt;a href="https://github.com/PokeAPI/pokeapi#contributing"&gt;PokéAPI contributors&lt;/a&gt; around the world. Pokémon and Pokémon character names are trademarks of Nintendo.<br/>
+     &lt;/div&gt;<br/>
+     &lt;div&gt;<br/>
+      &lt;a href="https://pokeapi.statuspage.io/"&gt;&lt;img alt="Status" src="https://img.shields.io/badge/dynamic/json?color=blue&amp;label=status&amp;query=%24.status.description&amp;url=https%3A%2F%2Fzlfyqp3hlvly.statuspage.io%2Fapi%2Fv2%2Fsummary.json"&gt;&lt;/a&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/footer&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;script type="text/javascript"&gt;window.__routeInfo = JSON.parse("{\"template\":\"__react_static_root__/src/pages/index.js\",\"sharedHashesByProp\":{},\"data\":{},\"path\":\"/\",\"sharedData\":{},\"siteData\":{\"alerts\":[{\"htmlMessage\":\"&lt;p&gt;PokeAPI proudly announces Beta support for GraphQL. Access our free console at &lt;a href=\\\"https://beta.pokeapi.co/graphql/console/\\\"&gt;beta.pokeapi.co/graphql/console&lt;/a&gt; and take a look at the &lt;a href=\\\"/docs/graphql\\\"&gt;documentation&lt;/a&gt;&lt;/p&gt;\\n\",\"level\":\"success\",\"id\":\"359b722e\"},{\"htmlMessage\":\"&lt;p&gt;&lt;strong&gt;Sword and Shield&lt;/strong&gt; data might be inaccurate and lacking in various aspects due to the fact that it is not taken directly from Nintendo&#39;s Pokemon ROMs. If you spot any mistake, please report it &lt;a href=\\\"https://github.com/PokeAPI/pokedex/issues\\\"&gt;here&lt;/a&gt;&lt;/p&gt;\\n\",\"level\":\"info\",\"id\":\"c5278044\"}]}}");&lt;/script&gt;<br/>
+  &lt;script defer type="text/javascript" src="/templates/styles.314290d0.js"&gt;&lt;/script&gt;<br/>
+  &lt;script defer type="text/javascript" src="/templates/vendors~main.17a02a7f.js"&gt;&lt;/script&gt;<br/>
+  &lt;script defer type="text/javascript" src="/main.b36df90d.js"&gt;&lt;/script&gt;<br/>
+  &lt;script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon="{&quot;rayId&quot;:&quot;7d0ac3c8fc340fd8&quot;,&quot;version&quot;:&quot;2023.4.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;9fbcf60ab0bc4d7d9c24cc0a2b3b7af0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"&gt;&lt;/script&gt; <br/>
+  &lt;ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"&gt;<br/>
+   &lt;div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"&gt;<br/>
+    &lt;iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9300109033485921&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1684316035&amp;plat=1%3A8%2C2%3A8%2C3%3A65536%2C4%3A65536%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fpokeapi.co%2F&amp;ea=0&amp;pra=5&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTE0LjAuNTczNS45MSIsW10sMCxudWxsLCI2NCIsW1siTm90LkEvQnJhbmQiLCI4LjAuMC4wIl0sWyJDaHJvbWl1bSIsIjExNC4wLjU3MzUuOTEiXSxbIkdvb2dsZSBDaHJvbWUiLCIxMTQuMC41NzM1LjkxIl1dLDBd&amp;dt=1685657197643&amp;bpp=4&amp;bdt=590&amp;idt=390&amp;shv=r20230530&amp;mjsv=m202305250101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=7709516128584&amp;frm=20&amp;pv=2&amp;ga_vid=1093399945.1685657198&amp;ga_sid=1685657198&amp;ga_hid=1034921732&amp;ga_fc=0&amp;u_tz=-420&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=912&amp;bih=887&amp;scr_x=0&amp;scr_y=0&amp;eid=44759926%2C44759842%2C44759875%2C42531706%2C44788441&amp;oid=2&amp;pvsid=1754744203281131&amp;tmod=1141409272&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=10%2C10%2C10%2C10%2C1920%2C0%2C945%2C1020%2C929%2C887&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=484" data-google-container-id="a!1" data-load-complete="true"&gt;&lt;/iframe&gt;<br/>
+   &lt;/div&gt;&lt;/ins&gt;&lt;iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"&gt;&lt;/iframe&gt;&lt;iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20230530/r20190131/zrt_lookup.html" style="display: none;"&gt;&lt;/iframe&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>

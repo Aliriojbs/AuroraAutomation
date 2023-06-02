@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: Test
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.607 s <<< FAILURE! - in Test
+Test.Testing pokeAPI  Time elapsed: 6.607 s  <<< ERROR!
+org.openqa.selenium.devtools.DevToolsException: 
+You are using a no-op implementation of the CDP. The most likely reason for this is that Selenium was unable to find an implementation of the CDP protocol that matches your browser. Please be sure to include an implementation on the classpath, possibly by adding a new (maven) dependency of `org.seleniumhq.selenium:selenium-devtools-vNN:4.8.0` where `NN` matches the major version of the browser you're using.
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: DevTools Connection
+	at org.openqa.selenium.devtools.noop.NoOpDomains.target(NoOpDomains.java:59)
+	at org.openqa.selenium.devtools.DevTools.findTarget(DevTools.java:157)
+	at org.openqa.selenium.devtools.DevTools.createSession(DevTools.java:121)
+	at org.openqa.selenium.devtools.DevTools.createSessionIfThereIsNotOne(DevTools.java:104)
+	at org.openqa.selenium.devtools.NetworkInterceptor.<init>(NetworkInterceptor.java:94)
+	at org.openqa.selenium.devtools.NetworkInterceptor.<init>(NetworkInterceptor.java:75)
+	at steps.HoverTestSteps.clickSubmit(HoverTestSteps.java:188)
+	at ✽.Click submit(file:///C:/Users/aliriob/Desktop/AuroraAutomation/src/test/resources/features/apis/cleaningSession/Test.feature:6)
+

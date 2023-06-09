@@ -22,6 +22,10 @@ public class GeneralSteps {
     public void iOpenTheAuroraAddUserWebpage() {
         getDriver().get("https://aurora-web-testingv2.azurewebsites.net/users/create-user");
     }
+    @Given("I open the AURORA add agency page")
+    public void iOpenTheAuroraAgencyWebpage() {
+        getDriver().get("https://aurora-web-testingv2.azurewebsites.net/home/agencies-catalog/create-agency");
+    }
 
     @Then("I send a text to the search bar")
     public void iSendATextToTheSearchBar() {

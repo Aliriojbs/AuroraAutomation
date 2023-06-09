@@ -1,4 +1,4 @@
-Feature: Chrome example
+Feature: Users Page POC
 
   Scenario: Test New user page
     Given I open the AURORA add users page
@@ -9,4 +9,5 @@ Feature: Chrome example
       | middle name | Jose                 |
       | last name   | Becerra              |
       | email       | aliriob@advancio.com |
+#    Then Click register button
     Then Just wait 10000

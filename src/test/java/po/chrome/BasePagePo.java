@@ -248,7 +248,6 @@ public class BasePagePo extends Driver {
     public void selectOptionClassicDropDown(WebElement element, String selectedOption, String xpathForAllOptions) {
         wait.until(ExpectedConditions.visibilityOf(element));
         String xpath = String.format(xpathForAllOptions, selectedOption);
-        waitUntilOptionIsVisible(element, xpath);
         WebElement selectedOptionElement = driver.findElement(By.xpath(xpath));
         wait.until(ExpectedConditions.elementToBeClickable(selectedOptionElement));
         selectedOptionElement.click();

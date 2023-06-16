@@ -30,6 +30,12 @@ public class UsersPo extends BasePagePo {
     private WebElement registerButton;
 
 
+    //EDIT
+
+    @FindBy(css = "input[formcontrolname=name]")
+    private WebElement firstNameEditInput;
+
+
 
 
     public UsersPo(WebDriver driver) {
@@ -43,6 +49,21 @@ public class UsersPo extends BasePagePo {
 
     public void fillFirstName(String option) {
         this.typeText(this.firstNameInput,option);
+    }
+
+    public void fillFirstNameEdit(String option) {
+        this.deleteFieldContendByKeySequence(this.firstNameEditInput);
+        this.typeText(this.firstNameEditInput,option);
+    }
+
+    public void fillFirstMiddleEdit(String option) {
+        this.deleteFieldContendByKeySequence(this.middleNameInput);
+        this.typeText(this.middleNameInput,option);
+    }
+
+    public void fillFirstLastEdit(String option) {
+        this.deleteFieldContendByKeySequence(this.lastNameInput);
+        this.typeText(this.lastNameInput,option);
     }
 
     public void fillMiddleName(String option) {

@@ -17,6 +17,10 @@ Feature: Agency Page
       | policy number   | 12345        |
       | limit           | limit test   |
       | expiration date | 10281990     |
+    Then Click add state button
+    Then Select "Alabama" state, in the row number "0"
+    Then fill "120142" on license number input, in the row number "0"
+    Then fill "10/28/2023" on expiration date input, in the row number "0"
     Then Fill operations for approval in agency page
       | operations            | All |
       | submit for approval   | yes |
@@ -25,7 +29,7 @@ Feature: Agency Page
       | select block agents   | yes |
     Then Fill underwriters in agency page
       | underwritter | All |
+    Then Just wait 1000
     Then Fill office in agency page
       | office | All |
 #    Then Click register button
-    Then Just wait 10000

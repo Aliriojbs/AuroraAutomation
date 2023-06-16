@@ -39,6 +39,16 @@ public class UserSteps extends DriverManager {
 
     }
 
+    @And("Fill edit user section")
+    public void fillEditUserSection(DataTable dataTable) {
+        Map<String, String> map = dataTable.asMap();
+
+        if (map.containsKey("first name")) usersPo.fillFirstNameEdit(map.get("first name"));
+        if (map.containsKey("middle name")) usersPo.fillFirstMiddleEdit(map.get("middle name"));
+        if (map.containsKey("last name")) usersPo.fillFirstLastEdit(map.get("last name"));
+
+    }
+
 
     @Then("Click register button")
     public void clickRegisterButton() {

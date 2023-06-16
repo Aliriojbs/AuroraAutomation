@@ -1,8 +1,7 @@
 package po.chrome;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.jetbrains.annotations.NotNull;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -66,39 +65,46 @@ public class AgencyPo extends BasePagePo {
     @FindBy(css = "input[formcontrolname=expirationDate]")
     private WebElement expirationDateInput;
 
-    @FindBy(xpath = "//button[contains(text(), ' Add State ')]")
-    private WebElement addStateButton;
+
 
     //STATES
 
-    //TBD
+
+    @FindBy(xpath = "//button[contains(text(), ' Add State ')]")
+    private WebElement addStateButton;
+
+    String statesDropdownHelper = ".auto-state%s-dropdown";
+    String lincenseNumberHelper = ".auto-licenseNumber%s-input";
+    String expirationDateHelper = ".auto-expirationDate%s-input";
+    String removeButtonHelper = ".auto-removeState%s-button";
+
 
     //Operations Submit for Approval
     @FindBy(css = "mat-select[formcontrolname=operations]")
     private WebElement operationsDropdown;
 
-    @FindBy(css = "input[id=rd_1]")
+    @FindBy(xpath = "//input[@id =\"rd_1\"]")
     private WebElement submitAppprovalYes;
 
-    @FindBy(css = "input[id=rd_2]")
+    @FindBy(xpath = "//input[@id =\"rd_2\"]")
     private WebElement submitAppprovalNo;
 
-    @FindBy(css = "input[id=rd_3]")
+    @FindBy(xpath = "//input[@id =\"rd_3\"]")
     private WebElement requireBindPhysicalYes;
 
-    @FindBy(css = "input[id=rd_4]")
+    @FindBy(xpath = "//input[@id =\"rd_4\"]")
     private WebElement requireBindPhysicalNo;
 
-    @FindBy(css = "input[id=rd_5]")
+    @FindBy(xpath = "//input[@id =\"rd_5\"]")
     private WebElement requireBindCargoYes;
 
-    @FindBy(css = "input[id=rd_6]")
+    @FindBy(xpath = "//input[@id =\"rd_6\"]")
     private WebElement requireBindCargoNo;
 
-    @FindBy(css = "input[id=rd_7]")
+    @FindBy(xpath = "//input[@id =\"rd_7\"]")
     private WebElement blockAgentsYes;
 
-    @FindBy(css = "input[id=rd_8]")
+    @FindBy(xpath = "//input[@id =\"rd_8\"]")
     private WebElement blockAgentsNo;
 
 
@@ -183,40 +189,40 @@ public class AgencyPo extends BasePagePo {
     }
 
     public void selectSubmitForAprovalRadioButton(String option) {
-        if(option=="yes"){
-            this.clickElement(submitAppprovalYes);
-        } else if (option=="no") {
-            this.clickElement(submitAppprovalNo);
+        if(option.equals("yes")){
+            this.clickElementJS(this.submitAppprovalYes);
+        } else if (option.equals("no")) {
+            this.clickElementJS(submitAppprovalNo);
         }else{
             System.out.println("Option Not found");
         }
     }
 
     public void selectRequireBindPhysical(String option) {
-        if(option=="yes"){
-            this.clickElement(requireBindPhysicalYes);
-        } else if (option=="no") {
-            this.clickElement(requireBindPhysicalNo);
+        if(option.equals("yes")){
+            this.clickElementJS(requireBindPhysicalYes);
+        } else if (option.equals("no")) {
+            this.clickElementJS(requireBindPhysicalNo);
         }else{
             System.out.println("Option Not found");
         }
     }
 
     public void selectRequireBindCargo(String option) {
-        if(option=="yes"){
-            this.clickElement(requireBindCargoYes);
-        } else if (option=="no") {
-            this.clickElement(requireBindCargoNo);
+        if(option.equals("yes")){
+            this.clickElementJS(requireBindCargoYes);
+        } else if (option.equals("no")) {
+            this.clickElementJS(requireBindCargoNo);
         }else{
             System.out.println("Option Not found");
         }
     }
 
     public void selectBlockAgents(String option) {
-        if(option=="yes"){
-            this.clickElement(blockAgentsYes);
-        } else if (option=="no") {
-            this.clickElement(blockAgentsYes);
+        if(option.equals("yes")){
+            this.clickElementJS(blockAgentsYes);
+        } else if (option.equals("no")) {
+            this.clickElementJS(blockAgentsYes);
         }else{
             System.out.println("Option Not found");
         }
@@ -232,6 +238,44 @@ public class AgencyPo extends BasePagePo {
         this.officeDropdown.click();
         this.selectOptionClassicDropDown(this.officeDropdown, option,"//span[@class='mat-option-text' and contains(text(), '%s')]");
         action.sendKeys(Keys.ESCAPE).perform();
+    }
+
+    public void selectState(@NotNull String option, String index) {
+//        String accessCode = "";
+//        accessCode = option.substring(0, 2).trim();
+        String css = String.format(this.statesDropdownHelper, index);
+//         String xpath = String.format("(//option[@class='ng-star-inserted' and contains(text(), ' %s ')])[%s]", Integer.toString(,Integer.parseInt(index) + 2));
+        this.selectOptionClassicDropDown(driver.findElement(By.cssSelector(css)), option,"(//option[@class='ng-star-inserted' and contains(text(), ' %s ')])[2]");
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
+//        clickElement(driver.findElement(By.cssSelector(css)));
+//        wait.until(ExpectedConditions.visibilityOf(this.accessorialCodeSearchOptions));
+//        this.accessorialCodeSearchOptions.sendKeys(accessCode);
+//        String xpath = String.format(this.options, option);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+//        WebElement selectedOption = driver.findElement(By.xpath(xpath));
+//        wait.until(ExpectedConditions.elementToBeClickable(selectedOption));
+//        clickElement(selectedOption);
+    }
+
+    public void fillLicensNumberState(String option, String index) {
+        String css = String.format(this.lincenseNumberHelper, index);
+        this.typeText(driver.findElement(By.cssSelector(css)),option);
+    }
+
+    public void fillExpirationDateState(String option, String index) {
+        String css = String.format(this.expirationDateHelper, index);
+        this.typeText(driver.findElement(By.cssSelector(css)),option);
+    }
+
+    public void clickRemoveButtonState(String index) {
+        String css = String.format(this.lincenseNumberHelper, index);
+        this.clickElement(driver.findElement(By.cssSelector(css)));
+    }
+
+    public void clickAddStateButton(){
+        this.clickElement(this.addStateButton);
+
     }
 
 

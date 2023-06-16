@@ -100,6 +100,30 @@ public class AgencySteps extends DriverManager {
 //        agencyPo.clickRegisterBUtton();
     }
 
+    @Then("Click add state button")
+    public void clickAddStateButton() {
+        agencyPo.clickAddStateButton();
+    }
+
+    @Then("Select {string} state, in the row number {string}")
+    public void selectState(String state, String indexPosition){
+        agencyPo.selectState(state,indexPosition);
+    }
+
+    @Then("fill {string} on license number input, in the row number {string}")
+    public void fillLicenseNumber(String licenseNumber, String indexPosition){
+        agencyPo.fillLicensNumberState(licenseNumber,indexPosition);
+    }
+
+    @Then("fill {string} on expiration date input, in the row number {string}")
+    public void fillexpDate(String expDate, String indexPosition){
+        agencyPo.fillExpirationDateState(expDate,indexPosition);
+    }
+
+    @Then("click remove button, in the row number {string}")
+    public void fillexpDate(String indexPosition){
+        agencyPo.clickRemoveButtonState(indexPosition);
+    }
 
 
 

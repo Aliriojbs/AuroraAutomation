@@ -249,7 +249,7 @@ public class BasePagePo extends Driver {
         wait.until(ExpectedConditions.visibilityOf(element));
         String xpath = String.format(xpathForAllOptions, selectedOption);
         WebElement selectedOptionElement = driver.findElement(By.xpath(xpath));
-        wait.until(ExpectedConditions.elementToBeClickable(selectedOptionElement));
+//        wait.until(ExpectedConditions.elementToBeClickable(selectedOptionElement));
         selectedOptionElement.click();
     }
 
@@ -259,9 +259,14 @@ public class BasePagePo extends Driver {
 
     public void clickElement(WebElement element) {
         scrollToElement(element);
-        wait.until(ExpectedConditions.visibilityOf(element));
+//        wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
+    }
+
+    public void clickElementJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()", element);
     }
 
     public void waitElementToBeInvisible(WebElement element) {
